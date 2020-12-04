@@ -3,7 +3,8 @@ package com.wxweven.algorithm.btree;
 /**
  * @author wxweven
  */
-public class LeetCode100 {
+public class LC100判断两棵二叉树是否一样 {
+
     /*
      * 检查两个二叉树是否完全一样
      *

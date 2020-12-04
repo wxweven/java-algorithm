@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * @author wxweven
  */
-public class LeetCode105 {
+public class LC105根据前序和中序遍历构建二叉树 {
     /*
      * Given preorder and inorder traversal of a tree, construct the binary tree.
      *

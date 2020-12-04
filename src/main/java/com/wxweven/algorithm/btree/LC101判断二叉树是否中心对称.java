@@ -3,7 +3,8 @@ package com.wxweven.algorithm.btree;
 /**
  * @author wxweven
  */
-public class LeetCode101 {
+public class LC101判断二叉树是否中心对称 {
+
     /*
      * 题目大意，就是判断二叉树是否为中心对称
      *
