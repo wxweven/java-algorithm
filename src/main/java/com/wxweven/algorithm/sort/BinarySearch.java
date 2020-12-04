@@ -1,8 +1,5 @@
 package com.wxweven.algorithm.sort;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * 二分查找算法
  *
@@ -14,11 +11,11 @@ import org.slf4j.LoggerFactory;
  * @Copyright: Copyright (c) wxweven 2009 - 2017
  */
 public class BinarySearch {
-    private static Logger logger = LoggerFactory.getLogger(BinarySearch.class);
-    static int[] arr = {10, 55,99, 69, 78, 85};
+
+    private static int[] arr = {10, 55, 99, 69, 78, 85};
 
     public static void main(String[] args) {
-        partintion(0,arr.length-1);
+        partintion(0, arr.length - 1);
 
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
@@ -28,8 +25,8 @@ public class BinarySearch {
         int x = 10;
         int pos = binaryFind(0, arr.length - 1, x);
 
-        String res = pos == -1 ? "未找到元素" : "找到元素，下标为" + pos;
-        logger.info(res);
+        String res = pos == -1 ? "未找到元素" : "找到元素10，下标为" + pos;
+        System.out.println(res);
     }
 
     /**
@@ -58,41 +55,40 @@ public class BinarySearch {
         return -1;
     }
 
-    public static void partintion( int left, int right){
-        if(left>=right){
+    public static void partintion(int left, int right) {
+        if (left >= right) {
             return;
         }
-
 
         int low = left;
         int high = right;
         int record = arr[left];
 
-        while(low<high){
-            while(low<high && arr[high]>=record){
+        while (low < high) {
+            while (low < high && arr[high] >= record) {
                 high--;
             }
 
-            while(low<high && arr[left]<=record){
+            while (low < high && arr[left] <= record) {
                 low++;
             }
 
-            if(low<high){
+            if (low < high) {
                 int tmp = arr[low];
-                arr[low]=arr[high];
-                arr[high]=tmp;
+                arr[low] = arr[high];
+                arr[high] = tmp;
             }
         }
 
         arr[left] = arr[low];
         arr[low] = record;
 
-        partintion( left, low-1);
-        partintion( low+1, right);
+        partintion(left, low - 1);
+        partintion(low + 1, right);
     }
 
 
-    public static int binaryFind( int left, int right, int num) {
+    public static int binaryFind(int left, int right, int num) {
         if (left > right) {
             return -1;
         }
