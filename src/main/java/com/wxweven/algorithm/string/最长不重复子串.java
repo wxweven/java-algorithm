@@ -39,7 +39,6 @@ public class 最长不重复子串 {
         Assert.assertEquals(res3, 3);
     }
 
-
     public static int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -63,15 +62,15 @@ public class 最长不重复子串 {
          * @param s
          * @return
          */
-        // i 代表正常的遍历顺序，j代表不重复子串的起点
-        for (int i = 0, j = 0; i < chars.length; i++) {
-            char c = chars[i];
+        // right 代表正常的遍历顺序，left代表不重复子串的起点
+        for (int left = 0, right = 0; right < chars.length; right++) {
+            char c = chars[right];
 
             // 当前重复字符为c
             while (charSet.contains(c)) {
                 // 循环的目的是把重复字符和重复字符之前的字符都从set中删除
-                charSet.remove(chars[j]);
-                j++;
+                charSet.remove(chars[left]);
+                left++;
             }
 
             // 下面两步是每次循环都需要做的

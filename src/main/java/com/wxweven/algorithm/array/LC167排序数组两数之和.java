@@ -32,6 +32,15 @@ public class LC167排序数组两数之和 {
         int left = 0;
         int right = nums.length - 1;
 
+        /*
+         * 循环退出啊条件：left < right，分析下这里为什么是 <
+         * 1. 首先，left > right 的情况，肯定是不行的，这种情况说明遍历已经越界了；
+         * 2. 其次，看下 left = right 的情况，因为题目中说要找到两个下标，如果 left = right，
+         *      这种情况下，sum = nums[left] + nums[right] 就不是两个数相加，不满足题目条件。
+         *
+         * 综上，循环退出条件为 left < right
+         *
+         */
         while (left < right) {
             int sum = nums[left] + nums[right];
             if (sum == target) {

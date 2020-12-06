@@ -50,36 +50,36 @@ public class 二叉搜索树后序遍历校验 {
         return left && right;
     }
 
-    public boolean isBST(int[] seq, int start, int end){
-        if(start >= end){
+    public boolean isBST(int[] seq, int start, int end) {
+        if (start >= end) {
             return true;
         }
-        int inx=seq[end], m=start;
+        int inx = seq[end], m = start;
 
         //找到分界点
-        for(int i=end-1; i>=start; i--){
-            if(seq[i]<inx){
+        for (int i = end - 1; i >= start; i--) {
+            if (seq[i] < inx) {
                 m = i;
                 break;
             }
-            if(i == start){
+            if (i == start) {
                 m = -1;
             }
         }
         //分界点前的数据都小于根节点
-        for(int i=start; i<=m; i++){
-            if(seq[i] > inx){
+        for (int i = start; i <= m; i++) {
+            if (seq[i] > inx) {
                 return false;
             }
         }
         //分界点后的数据都大于根节点
-        for(int i=m+1; i<end; i++){
-            if(seq[i] < inx){
+        for (int i = m + 1; i < end; i++) {
+            if (seq[i] < inx) {
                 return false;
             }
         }
         //递归判断根节点的左右子树
-        return isBST(seq, start, m)&&isBST(seq, m+1, end-1);
+        return isBST(seq, start, m) && isBST(seq, m + 1, end - 1);
     }
 
     @Test
@@ -97,19 +97,19 @@ public class 二叉搜索树后序遍历校验 {
         Assert.assertFalse(result2);
 
 
-        result =isBST(a, 0, a.length-1);
+        result = isBST(a, 0, a.length - 1);
         System.out.println(result);
         Assert.assertTrue(result);
 
-        result =isBST(b, 0, b.length-1);
+        result = isBST(b, 0, b.length - 1);
         System.out.println(result);
         Assert.assertFalse(result);
 
-        result =isBST(c, 0, c.length-1);
+        result = isBST(c, 0, c.length - 1);
         System.out.println(result);
         Assert.assertTrue(result);
 
-        result =isBST(d, 0, d.length-1);
+        result = isBST(d, 0, d.length - 1);
         System.out.println(result);
         Assert.assertTrue(result);
     }
