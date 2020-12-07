@@ -1,6 +1,10 @@
-package com.wxweven.algorithm.btree;
+package com.wxweven.algorithm.btree.BST;
 
-public class 二叉搜索树与双向链表 {
+import com.wxweven.algorithm.btree.TreeNode;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class BST2双向链表 {
     TreeNode pre, head;
 
     public TreeNode treeToDoublyList(TreeNode root) {
@@ -43,5 +47,17 @@ public class 二叉搜索树与双向链表 {
 
         // 中序遍历，后遍历右节点
         dfs(cur.right);
+    }
+
+    @Test
+    public void test() {
+        TreeNode root = new TreeNode(2);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(3);
+        TreeNode head = treeToDoublyList(root);
+
+        Assert.assertEquals(1, (int) head.val);
+        Assert.assertEquals(3, (int) head.left.val);
+        Assert.assertEquals(2, (int) head.right.val);
     }
 }

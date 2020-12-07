@@ -1,4 +1,4 @@
-package com.wxweven.algorithm.btree;
+package com.wxweven.algorithm.btree.BST;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 思路：注意是搜索树，即左孩子<根<右孩子，后序序列的最后一个数是根，前边比根小的是左子树，比根大的是右子树，然后对左右子树递归。
  * 相关题目：后序变成前序也是这个思路，树的遍历关键都是先找根结点。
  */
-public class 二叉搜索树后序遍历校验 {
+public class BST后序遍历校验 {
     public static boolean verifySequenceOfBST(int[] arr) {
         if (arr == null || arr.length <= 0) {
             return false;
