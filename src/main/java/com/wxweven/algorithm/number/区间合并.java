@@ -48,6 +48,7 @@ public class 区间合并 {
 
     /**
      * 解题思路：https://blog.csdn.net/DERRANTCM/article/details/47120501
+     * https://www.yuque.com/wxweven/yn3rzz/1607579346663
      */
     public List<Interval> merge(List<Interval> intervals) {
         if (CollectionUtils.isEmpty(intervals)) {
