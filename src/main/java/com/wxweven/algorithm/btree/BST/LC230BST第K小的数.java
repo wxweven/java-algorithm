@@ -53,5 +53,4 @@ public class LC230BST第K小的数 {
         int i = kthSmallest(biTreeNode, 2);
         System.out.println(i);
     }
-
 }
