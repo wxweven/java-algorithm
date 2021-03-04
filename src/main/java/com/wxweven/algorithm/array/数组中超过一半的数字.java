@@ -55,33 +55,30 @@ public class 数组中超过一半的数字 {
      * 由于我们要找的数字出现的次数比其他所有数字出现的次数之和还要多，那么要找的数字肯定是最后一次把次数设置为1时对应的数字。
      * 最后一次把次数设置为1时对应的数字不一定就是超过一半的数字（有可能不存在）
      *
-     * @param array
+     * @param nums
      */
-    private static void moreThanHalfNum2(int[] array) {
-        if (array == null) {
+    private static void moreThanHalfNum2(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return;
         }
 
-        int count = 1;
-        int number = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (count == 0) {
-                number = array[i];
-                count = 1;
-            } else if (array[i] == number) {
-                count++;
-            } else {
-                count--;
+        int x = 0;
+        int votes = 0;
+        for (int num : nums) {
+            if (votes == 0) {
+                x = num;
             }
+
+            votes += num == x ? 1 : -1;
         }
 
-        if (count == 0) {
+        if (votes == 0) {
             System.out.println("不用check，没有一半");
             return;
         }
 
-        if (check(array, number)) {
-            System.out.println(number);
+        if (check(nums, x)) {
+            System.out.println(x);
         } else {
             System.out.println("没有超过一半的数");
         }

@@ -1,12 +1,10 @@
 package com.wxweven.algorithm.btree;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author wxweven
  */
 public class LC105根据前序和中序遍历构建二叉树 {
+
     /*
      * Given preorder and inorder traversal of a tree, construct the binary tree.
      *
@@ -28,33 +26,42 @@ public class LC105根据前序和中序遍历构建二叉树 {
      * 题目概述：给定二叉树的先序遍历和中序遍历，构造这颗二叉树
      */
 
-    private Map<Integer, Integer> map = new HashMap<>();
-
+    /* 主函数 */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        if (preorder == null || preorder.length == 0 || inorder == null || inorder.length == 0) {
+        return build(preorder, 0, preorder.length - 1,
+                inorder, 0, inorder.length - 1);
+    }
+
+    public TreeNode build(int[] preorder, int preStart, int preEnd,
+                          int[] inorder, int inStart, int inEnd) {
+
+        if (preStart > preEnd) {
             return null;
         }
 
-        for (int i = 0; i < inorder.length; i++) {
-            map.put(inorder[i], i);
+        // root 节点对应的值就是前序遍历数组的第一个元素
+        int rootVal = preorder[preStart];
+
+        // rootVal 在中序遍历数组中的索引
+        int index = 0;
+        for (int i = inStart; i <= inEnd; i++) {
+            if (inorder[i] == rootVal) {
+                index = i;
+                break;
+            }
         }
 
-        return helper(preorder, inorder, 0, 0, inorder.length - 1);
-    }
+        int leftSize = index - inStart;
 
-    public TreeNode helper(int[] preorder, int[] inorder,
-                           int preStart,
-                           int inStart, int inEnd) {
-        if (preStart >= preorder.length || inStart > inEnd) return null;
+        // 先构造出当前根节点
+        TreeNode root = new TreeNode(rootVal);
 
-        TreeNode root = new TreeNode(preorder[preStart]);
-
-        int rootIndex = map.get(preorder[preStart]);
-
-        root.left = helper(preorder, inorder, preStart + 1, inStart, rootIndex - 1);
-        root.right = helper(preorder, inorder, preStart + rootIndex - inStart + 1, rootIndex + 1, inEnd);
+        // 递归构造左右子树
+        root.left = build(preorder, preStart + 1, preStart + leftSize,
+                inorder, inStart, index - 1);
+        root.right = build(preorder, preStart + leftSize + 1, preEnd,
+                inorder, index + 1, inEnd);
 
         return root;
-
     }
 }

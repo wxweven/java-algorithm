@@ -42,6 +42,18 @@ public class 反转单链表 {
     }
 
     /**
+     * 反向打印链表
+     */
+    public static void reversePrint(ListNode head) {
+        if (head == null) {
+            return;
+        }
+
+        reversePrint(head.next);
+        System.out.print(head.val + "->");
+    }
+
+    /**
      * 迭代法，反转前N个节点
      */
     public ListNode reverseN(ListNode head, int n) {
@@ -157,6 +169,11 @@ public class 反转单链表 {
         head = ListNode.createLinkedList(Arrays.asList(1, 2, 3, 4, 5));
         System.out.println("原链表：");
         ListNode.print(head);
+
+        System.out.println("逆序输出：");
+        reversePrint(head);
+        System.out.println();
+
         newHead = reverseV2(head);
 
         System.out.println("反转后链表：");
