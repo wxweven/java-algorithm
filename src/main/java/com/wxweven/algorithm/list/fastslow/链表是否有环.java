@@ -1,4 +1,6 @@
-package com.wxweven.algorithm.list;
+package com.wxweven.algorithm.list.fastslow;
+
+import com.wxweven.algorithm.list.ListNode;
 
 /**
  * @author wxweven
@@ -8,9 +10,6 @@ public class 链表是否有环 {
     /**
      * 思路：
      * 快慢指针法：快指针每次走2步，慢指针每次走1步，如果链表有环，则快慢指针最终会相遇
-     *
-     * @param head
-     * @return
      */
     public static boolean hasCircle(ListNode head) {
         ListNode slow = head;

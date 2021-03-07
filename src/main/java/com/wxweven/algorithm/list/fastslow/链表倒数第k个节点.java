@@ -1,5 +1,6 @@
-package com.wxweven.algorithm.list;
+package com.wxweven.algorithm.list.fastslow;
 
+import com.wxweven.algorithm.list.ListNode;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -29,8 +30,8 @@ public class 链表倒数第k个节点 {
         /*
          * 快指针先走k-1步
          * 为什么是先先走 k-1步：
-         * 假设在某一时刻，第一个指针从头开始走到倒数个第K个节点，第二个指针从头开始走到最后一个节点，
-         * 那么第二个指针比第一个指针多走了 k-1 步；所以，得让第二个指针先走 k-1 步
+         * 假设在某一时刻，慢指针从头开始走到倒数个第K个节点，快指针从头开始走到最后一个节点，
+         * 那么快指针比慢指针多走了 k-1 步；所以，得让快指针先走 k-1 步
          */
         for (int i = 0; i < k - 1; i++) {
             if (fast.next != null) {

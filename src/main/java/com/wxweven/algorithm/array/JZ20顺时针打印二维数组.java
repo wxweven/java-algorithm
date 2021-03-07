@@ -6,11 +6,13 @@ package com.wxweven.algorithm.array;
  * @author wxweven
  * @date 2018/10/26
  */
-public class 顺时针打印二维数组 {
+public class JZ20顺时针打印二维数组 {
 
     private static void meiyiquan(int[][] nums) {
-        if (nums == null)
+        if (nums == null || nums.length == 0) {
             return;
+        }
+
         int rows = nums.length;
         int columns = nums[0].length;
         int start = 0;

@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 public class 合并两个有序的单链表 {
+
     /*
      * 面试题17：合并两个排序的链表(递归)
      * 输入两个递增的链表，合并这两个链表并使新链表仍然是递增的。
@@ -17,7 +18,9 @@ public class 合并两个有序的单链表 {
     public static ListNode merge(ListNode head1, ListNode head2) {
         if (head1 == null) {
             return head2;
-        } else if (head2 == null) {
+        }
+
+        if (head2 == null) {
             return head1;
         }
 

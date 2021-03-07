@@ -1,5 +1,7 @@
 package com.wxweven.algorithm.array;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 /*
@@ -8,12 +10,12 @@ import java.util.Arrays;
  * 思路：(跟快排一样的思路)前后各一个指针相互靠近，如果前偶后奇，交换位置，直到两个指针相遇。复杂度O(n)。
  * 注意：如果题目换成负数在正数前边，或能被3整除的在不能的前边等，只是判断条件改变，所以我们把判断功能分离出来，每次只修改这个功能就行了。
  */
-public class 奇数位于偶数之前 {
+public class JZ14奇数位于偶数之前 {
     static boolean isEven(int number) {//是不是偶数
         return (number & 1) == 0;
     }
 
-    public static void reorder(int[] array) {
+    public void reorder(int[] array) {
         if (array.length == 0) {
             System.out.println("数组为空");
             return;
@@ -40,7 +42,8 @@ public class 奇数位于偶数之前 {
         }
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
         int[] test = {2, 4, 5, 6, 1, 3, 9};
         reorder(test);
         System.out.println(Arrays.toString(test));

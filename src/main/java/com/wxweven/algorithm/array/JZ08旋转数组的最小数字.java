@@ -9,7 +9,7 @@ package com.wxweven.algorithm.array;
 /**
  * @author wxweven
  */
-public class JZ旋转数组的最小数字 {
+public class JZ08旋转数组的最小数字 {
 
     /*
      * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。

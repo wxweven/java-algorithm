@@ -1,4 +1,6 @@
-package com.wxweven.algorithm.list;
+package com.wxweven.algorithm.list.reverse;
+
+import com.wxweven.algorithm.list.ListNode;
 
 /**
  * @author wxweven

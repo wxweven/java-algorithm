@@ -1,5 +1,6 @@
-package com.wxweven.algorithm.list;
+package com.wxweven.algorithm.list.reverse;
 
+import com.wxweven.algorithm.list.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,6 +10,9 @@ public class 反转单链表 {
 
     ListNode successor = null;
 
+    /**
+     * 迭代方式反转单链表
+     */
     public static ListNode reverse(ListNode head) {
         if (head == null) {
             return null;
@@ -27,7 +31,9 @@ public class 反转单链表 {
         return prev;
     }
 
-    // 递归方式：图解 https://www.yuque.com/wxweven/yn3rzz/1607663560360
+    /**
+     * 递归方式：图解 https://www.yuque.com/wxweven/yn3rzz/1607663560360
+     */
     public static ListNode reverseV2(ListNode head) {
 
         /*如果是空链或者只是单个节点的链表  将直接返回*/
