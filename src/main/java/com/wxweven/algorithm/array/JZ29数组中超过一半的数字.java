@@ -12,7 +12,7 @@ package com.wxweven.algorithm.array;
  * 如果该数与上一个数不同，次数减一，反之加一，如果次数为0，保存下一个数为要返回的数，并把次数设为1。
  * 因为要找的数字比其他数字总数多，所以要找到数字就是最后一次把次数设为1时对应的数字。
  */
-public class 数组中超过一半的数字 {
+public class JZ29数组中超过一半的数字 {
     public static void main(String[] args) {
         moreThanHalfNum1(new int[]{1, 8, 5, 2, 2, 2, 2});
         moreThanHalfNum2(new int[]{2, 4, 2, 8, 6, 6, 6, 6});

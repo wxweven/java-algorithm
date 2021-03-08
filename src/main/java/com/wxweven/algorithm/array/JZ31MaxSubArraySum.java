@@ -6,7 +6,7 @@ package com.wxweven.algorithm.array;
  * 每个子数组都有一个和。求所有子数组的和的最大值。要求时间复杂度为O(n)。 例如：输入的数组为1, -2, 3, 10,
  * -4, 7, 2, -5 和最大的子数组为3, 10, -4, 7, 2， 因此输出为该子数组的和18。
  */
-public class MaxSubArraySum {
+public class JZ31MaxSubArraySum {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5};
         int[] arr2 = new int[]{1, -2, 3, 10, -4, 7, 2, -5};
